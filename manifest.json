@@ -1,0 +1,42 @@
+{
+  "manifest_version": 3,
+  "name": "YT Spotify Sync",
+  "version": "1.0.0",
+  "description": "Pause and resume Spotify playback based on YouTube play state.",
+  "permissions": ["storage", "tabs", "scripting", "identity", "alarms"],
+  "host_permissions": [
+    "https://www.youtube.com/*",
+    "https://api.spotify.com/*",
+    "https://accounts.spotify.com/*"
+  ],
+  "background": {
+    "service_worker": "background/service-worker.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["content/youtube.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["auth/callback.html"],
+      "matches": ["https://*.chromiumapp.org/*"]
+    }
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
