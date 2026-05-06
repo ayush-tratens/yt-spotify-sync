@@ -69,18 +69,21 @@ const CLIENT_ID = "your_actual_client_id_here";
 
 ---
 
-### Step 4 — Add placeholder icons
+### Step 4 — Customize the icon (optional)
 
-The extension needs icon files to load. Create or copy any PNG images and place them in the `icons/` folder with these exact names:
+The extension comes with default icons in the `icons/` folder. If you want to use your own:
+
+1. Create or download your custom PNG image
+2. Export/resize it in 3 sizes and replace the files in the `icons/` folder:
 
 ```
 icons/
-  icon16.png
-  icon48.png
-  icon128.png
+  icon16.png   ← 16x16px  (shown in browser toolbar)
+  icon48.png   ← 48x48px  (shown in extensions page)
+  icon128.png  ← 128x128px (shown in Chrome Web Store)
 ```
 
-Any PNG files will work — Chrome will scale them automatically.
+Free tools to create/resize icons: [favicon.io](https://favicon.io), [canva.com](https://canva.com), or [icoconvert.com](https://icoconvert.com)
 
 ---
 
